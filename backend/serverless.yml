@@ -1,10 +1,21 @@
 service: senior-project-template
-frameworkVersion: '3'
+frameworkVersion: '4'
 
 provider:
   name: aws
   runtime: nodejs20.x
   region: us-east-1
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:GetItem
+            - dynamodb:PutItem
+          Resource:
+            - !GetAtt UsersTable.Arn
+            - !GetAtt ProjectsTable.Arn
+            - !GetAtt DailyStatusTable.Arn
 
 plugins:
   - serverless-offline
@@ -78,6 +89,8 @@ resources:
 functions:
   login:
     handler: src/handlers/login.handler
+    environment:
+      USERS_TABLE: users
     events:
       - http:
           path: login
