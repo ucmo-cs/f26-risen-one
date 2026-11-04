@@ -97,6 +97,14 @@ functions:
           method: post
           cors: true
 
+  readTickets:
+    handler: src/handlers/read-tickets.handler
+    events:
+      - http:
+          path: tickets
+          method: get
+          cors: true
+
   importData:
     handler: src/handlers/import-data.handler
     environment:
