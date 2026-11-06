@@ -1,0 +1,1 @@
+{"statusCode":201,"headers":{"Content-Type":"application/json"},"body":"{\"message\":\"Ticket created successfully\",\"issue\":{\"number\":9,\"title\":\"Test ticket from AWS\",\"url\":\"https://github.com/ameyPending08/ticket-tracker/issues/9\"},\"projectItemId\":\"PVTI_lAHODmpth84Bp8lOzhGrrBI\"}"}

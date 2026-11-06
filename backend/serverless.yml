@@ -107,6 +107,13 @@ functions:
       #     method: get
       #     cors: true
 
+  
+  createTicket:
+    handler: src/handlers/create-tickets.handler
+    environment:
+      GITHUB_TOKEN: ${ssm:/f26-risen-one/dev/github-token}
+
+
   importData:
     handler: src/handlers/import-data.handler
     environment:
