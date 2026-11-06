@@ -99,11 +99,13 @@ functions:
 
   readTickets:
     handler: src/handlers/read-tickets.handler
-    events:
-      - http:
-          path: tickets
-          method: get
-          cors: true
+    environment:
+      GITHUB_TOKEN: ${ssm:/f26-risen-one/dev/github-token}
+      # events:
+      #  - http:
+      #     path: tickets
+      #     method: get
+      #     cors: true
 
   importData:
     handler: src/handlers/import-data.handler

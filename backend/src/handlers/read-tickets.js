@@ -59,16 +59,22 @@ exports.handler = async () => {
 
     const result = await response.json();
 
-    if (!response.ok || result.errors) {
-      console.error("GitHub API error:", result.errors);
+    
+  if (!response.ok || result.errors) {
+    console.error("GitHub HTTP status:", response.status);
+    console.error("GitHub error details:", {
+      message: result.message,
+      errors: result.errors
+    });
 
-      return {
-        statusCode: 502,
-        body: JSON.stringify({
-          error: "Failed to retrieve GitHub tickets"
-        })
-      };
-    }
+    return {
+      statusCode: 502,
+      body: JSON.stringify({
+        error: "Failed to retrieve GitHub tickets"
+      })
+    };
+  }
+
 
     const project = result.data?.node;
 
