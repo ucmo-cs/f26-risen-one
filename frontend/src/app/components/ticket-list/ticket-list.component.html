@@ -1,0 +1,23 @@
+
+<div class="ticket-container">
+  <h1>Support Tickets</h1>
+  <p>View and track submitted support requests.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Issue #</th>
+        <th>Title</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let ticket of tickets">
+        <td>{{ ticket.number }}</td>
+        <td>{{ ticket.title }}</td>
+        <td>{{ ticket.status }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

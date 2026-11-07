@@ -1,3 +1,4 @@
+import { TicketListComponent } from './components/ticket-list/ticket-list.component';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
@@ -13,6 +14,7 @@ export const routes: Routes = [
     path: 'daily-status',
     component: DailyStatusComponent
   },
+  { path: 'tickets', component: TicketListComponent }
   ];
 
   @NgModule({
